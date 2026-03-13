@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>AI.EX TITAN | 2026 Omni-Archive of Artificial Intelligence</title>
+    <meta name="description" content="The world's largest interactive AI archive. 40+ topics, 50+ ethical debates, 90+ historical news entries. Explore the singularity.">
+    <meta name="keywords" content="AI Archive 2026, AGI, Superintelligence, AI News, Machine Learning History, Neural Networks, Robotics, AI Ethics Debates">
+    <meta name="author" content="AI.EX Neural Systems">
+    <meta property="og:title" content="AI.EX TITAN | The Infinite AI Vault">
+    <meta property="og:description" content="Deep dive into 180+ data points of machine intelligence evolution.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1620712943543-bcc4628c9759?auto=format&fit=crop&q=80&w=1920">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #03040a;
+            --cyan: #00eaff;
+            --purple: #8b5cf6;
+            --glass: rgba(10, 12, 30, 0.85);
+            --border: rgba(0, 234, 255, 0.2);
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; scroll-behavior: smooth; }
+        body { background: var(--bg); color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+        /* Neural Star Engine */
+        #star-canvas { position: fixed; top: 0; left: 0; z-index: 1; pointer-events: none; }
+
+        /* Layout Architecture */
+        section { padding: 120px 8%; position: relative; z-index: 10; border-bottom: 1px solid rgba(255,255,255,0.03); }
+        .tag { display: inline-block; padding: 6px 14px; border-radius: 50px; background: rgba(0, 234, 255, 0.1); color: var(--cyan); font-size: 11px; border: 1px solid var(--cyan); font-family: 'JetBrains Mono'; margin-bottom: 20px; text-transform: uppercase; }
+        h2 { font-family: 'Space Grotesk'; font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 3rem; background: linear-gradient(to right, #fff, var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* Animation Classes */
+        .reveal { opacity: 0; transform: translateY(40px); transition: 1s cubic-bezier(0.22, 1, 0.36, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Grid Containers */
+        .grid-dynamic { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 25px; }
+        
+        /* Glass Components */
+        .glass-card { 
+            background: var(--glass); border: 1px solid var(--border); padding: 35px; border-radius: 24px; 
+            backdrop-filter: blur(15px); transition: 0.4s; position: relative; overflow: hidden;
+        }
+        .glass-card:hover { border-color: var(--cyan); transform: translateY(-10px); background: rgba(0, 234, 255, 0.03); }
+        .glass-card h3 { color: var(--cyan); font-family: 'Space Grotesk'; font-size: 1.5rem; margin-bottom: 15px; }
+        .glass-card p { color: #aaa; font-size: 0.95rem; line-height: 1.6; }
+
+        /* Massive Data Scrollers */
+        .vault-scroller { 
+            height: 600px; overflow-y: scroll; padding-right: 20px; 
+            scrollbar-width: thin; scrollbar-color: var(--cyan) transparent;
+            mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+        }
+        .vault-scroller::-webkit-scrollbar { width: 4px; }
+        .vault-scroller::-webkit-scrollbar-thumb { background: var(--cyan); border-radius: 10px; }
+        
+        .entry { padding: 25px 0; border-bottom: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
+        .entry:hover { padding-left: 20px; border-bottom-color: var(--cyan); }
+        .entry-meta { font-family: 'JetBrains Mono'; color: var(--purple); font-size: 0.8rem; margin-bottom: 5px; display: block; }
+        .entry-title { font-weight: 600; font-size: 1.1rem; color: #eee; }
+
+        /* Video Section */
+        .video-sequence { height: 350vh; position: relative; }
+        .sticky-vid { position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; }
+        .vid-frame { width: 60%; aspect-ratio: 16/9; background: #000; border-radius: 40px; overflow: hidden; transform: scale(0.7); transition: 0.1s linear; border: 1px solid rgba(0,234,255,0.2); }
+        .vid-frame iframe { width: 100%; height: 100%; border: none; }
+        .vid-caption { margin-top: 30px; font-family: 'JetBrains Mono'; color: var(--cyan); font-size: 14px; opacity: 0; transition: 0.5s; letter-spacing: 5px; }
+
+        footer { padding: 100px 5%; text-align: center; color: #444; font-family: 'JetBrains Mono'; font-size: 0.7rem; border-top: 1px solid rgba(255,255,255,0.05); }
+    </style>
+</head>
+<body>
+
+<canvas id="star-canvas"></canvas>
+
+<section style="height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+    <div class="tag reveal">Neural Dataset v2026. TITAN-CLASS</div>
+    <h1 class="reveal" style="font-size: clamp(4rem, 15vw, 10rem); font-family: 'Space Grotesk'; font-weight: 700; letter-spacing: -10px; line-height: 0.8;">AI.EX</h1>
+    <p class="reveal" style="margin-top: 30px; letter-spacing: 12px; color: #555; font-family: 'JetBrains Mono';">THE INFINITE ARCHIVE</p>
+</section>
+
+<section id="topics" class="reveal">
+    <div class="tag">Knowledge Manifold</div>
+    <h2>Core Disciplines</h2>
+    <div class="grid-dynamic" id="topic-container">
+        </div>
+</section>
+
+<section id="news" class="reveal">
+    <div class="tag">Historical Chronology</div>
+    <h2>90 Significant Milestones</h2>
+    <div class="vault-scroller" id="news-vault">
+        </div>
+</section>
+
+<div class="video-sequence" id="v-trig">
+    <div class="sticky-vid">
+        <div class="vid-frame" id="v-frame">
+            <iframe src="https://www.youtube.com/embed/ARXS-uk19h8?autoplay=0&mute=1" allowfullscreen></iframe>
+        </div>
+        <p class="vid-caption" id="v-cap">DOCUMENTARY: THE DAWN OF NEURAL REASONING [IBM]</p>
+    </div>
+</div>
+
+<section id="debates" class="reveal">
+    <div class="tag">Ethical Arena</div>
+    <h2>50 Pillars of Conflict</h2>
+    <div class="grid-dynamic" id="debate-container">
+        </div>
+</section>
+
+<footer>
+    <p>AI.EX TITAN // RSA-ENABLED ARCHIVE // 180+ DATA NODES SYNCED</p>
+    <p style="margin-top: 10px;">LATENT SPACE MAPPING: COMPLETE // 2026.03.13</p>
+</footer>
+
+<script>
+    // --- 1. THE DATASET (PROGRAMMATIC GENERATION) ---
+    const topicData = [
+        "Natural Language Processing", "Computer Vision", "Reinforcement Learning", "Generative Adversarial Networks", "Transformer Models", 
+        "Neural Radiance Fields", "Quantum Neural Networks", "Edge AI", "Federated Learning", "Explainable AI (XAI)", 
+        "Symbolic AI", "Evolutionary Algorithms", "Neuromorphic Engineering", "Biometric Intelligence", "Autonomous Robotics",
+        "Semantic Web", "Zero-Shot Learning", "Multimodal Transformers", "Neural Architecture Search", "Bayesian Networks",
+        "Expert Systems", "Digital Twins", "Emotion AI", "Synthetic Biology AI", "Swarm Intelligence",
+        "Transfer Learning", "Self-Supervised Learning", "Large Action Models (LAMs)", "AI Drug Discovery", "Smart Grids AI",
+        "Neural Machine Translation", "Anomaly Detection", "Hyperparameter Tuning", "Graph Neural Networks", "Time Series Forecasting",
+        "AI in Fintech", "Legal AI Systems", "Climate Modeling AI", "HCI - Neural Interfaces", "Ethical Alignment Frameworks"
+    ];
+
+    const debateTopics = [
+        "AI Consciousness", "Universal Basic Income", "Robot Rights", "Copyright in Latent Space", "The Alignment Problem",
+        "Deepfake Regulations", "Job Displacement vs Creation", "AI Weaponization", "Data Sovereignty", "Algorithmic Bias",
+        "The Turing Trap", "Singularity Timeline", "Energy Consumption of LLMs", "Open Source vs Closed Models", "Digital Immortality",
+        "Biological-AI Hybridization", "Governance of AGI", "Privacy in the Age of Vision AI", "Creative Originality", "Human Over-reliance",
+        "Sentience Testing", "Moral Status of Substrate-Independent Minds", "AI Sentencing in Law", "Autonomous Warfare Ethics", "Child-AI Developmental Impact",
+        "Predictive Policing Risks", "The Black Box problem", "Social Manipulation Algorithms", "Wealth Gap via Automation", "Technological Unemployment",
+        "Neural Rights & Brain Privacy", "Recursive Self-Improvement", "Space Exploration via AI", "Algorithmic Transparency", "Silicon-based Personhood",
+        "The Paperclip Maximizer Paradox", "Cybersecurity in AI era", "Democratic AI Governance", "Standardized Safety Evaluations", "Global AI Arms Race",
+        "Transhumanist Ethics", "Synthetic Identity Theft", "Education in Gen-AI world", "Health Data Monetization", "AI in Mental Health Support",
+        "Post-Scarcity Economics", "Machine Hallucinations as Reality", "Ownership of AI-generated Art", "Cross-Border AI Regulation", "The Future of Human Purpose"
+    ];
+
+    // Build UI
+    const topicContainer = document.getElementById('topic-container');
+    topicData.forEach(t => {
+        topicContainer.innerHTML += `<div class="glass-card"><h3>${t}</h3><p>Detailed technical analysis and 2026 application standards for ${t} systems.</p></div>`;
+    });
+
+    const newsVault = document.getElementById('news-vault');
+    for(let i=90; i>0; i--) {
+        newsVault.innerHTML += `
+            <div class="entry">
+                <span class="entry-meta">NODE_0${i} // LOG_YEAR: 202${Math.floor(Math.random()*7)}</span>
+                <div class="entry-title">Significant Breakthrough in ${topicData[i%topicData.length]} achieves SOTA performance.</div>
+            </div>`;
+    }
+
+    const debateContainer = document.getElementById('debate-container');
+    debateTopics.forEach(d => {
+        debateContainer.innerHTML += `<div class="glass-card" style="border-left: 4px solid var(--purple)"><h3>${d}</h3><p>Investigating the core conflict of ${d} within the 2026 ethical framework.</p></div>`;
+    });
+
+    // --- 2. THE STAR-ATLAS ENGINE (ORION, HORSEHEAD, URSA MAJOR) ---
+    const canvas = document.getElementById('star-canvas');
+    const ctx = canvas.getContext('2d');
+    let width, height, constellations = [];
+
+    function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+        initStars();
+    }
+
+    function initStars() {
+        constellations = [
+            { // Orion
+                x: width * 0.1, y: height * 0.2, color: '#00eaff',
+                pts: [{x:0,y:0}, {x:20,y:-60}, {x:50,y:-20}, {x:-30,y:-120}, {x:90,y:-130}, {x:-20,y:100}, {x:80,y:110}],
+                links: [[0,1],[1,2],[0,3],[2,4],[0,5],[2,6]]
+            },
+            { // Ursa Major (Big Dipper)
+                x: width * 0.75, y: height * 0.1, color: '#fff',
+                pts: [{x:0,y:0}, {x:60,y:10}, {x:80,y:60}, {x:30,y:70}, {x:-60,y:-20}, {x:-110,y:-10}, {x:-160,y:30}],
+                links: [[0,1],[1,2],[2,3],[3,0],[0,4],[4,5],[5,6]]
+            },
+            { // Horsehead Region
+                x: width * 0.45, y: height * 0.6, color: '#8b5cf6',
+                pts: [{x:0,y:0}, {x:30,y:-40}, {x:60,y:0}, {x:30,y:40}, {x:-10,y:30}],
+                links: [[0,1],[1,2],[2,3],[3,4],[4,0]]
+            }
+        ];
+    }
+
+    function animate() {
+        ctx.clearRect(0,0,width,height);
+        const scroll = window.scrollY;
+
+        constellations.forEach(c => {
+            let cy = (c.y - scroll * 0.05) % height;
+            if(cy < 0) cy += height;
+            
+            ctx.strokeStyle = c.color + "22";
+            ctx.beginPath();
+            c.links.forEach(l => {
+                ctx.moveTo(c.x + c.pts[l[0]].x, cy + c.pts[l[0]].y);
+                ctx.lineTo(c.x + c.pts[l[1]].x, cy + c.pts[l[1]].y);
+            });
+            ctx.stroke();
+
+            c.pts.forEach(p => {
+                ctx.fillStyle = c.color;
+                ctx.beginPath();
+                ctx.arc(c.x + p.x, cy + p.y, 2.5, 0, Math.PI*2);
+                ctx.fill();
+            });
+        });
+        requestAnimationFrame(animate);
+    }
+
+    // --- 3. SCROLL REVEAL & VIDEO LOGIC ---
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('active'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    window.addEventListener('scroll', () => {
+        const trig = document.getElementById('v-trig');
+        const frame = document.getElementById('v-frame');
+        const cap = document.getElementById('v-cap');
+        const rect = trig.getBoundingClientRect();
+        let p = -rect.top / (trig.offsetHeight - window.innerHeight);
+        p = Math.max(0, Math.min(1, p));
+
+        frame.style.width = (60 + (p * 40)) + '%';
+        frame.style.transform = `scale(${0.7 + (p * 0.3)})`;
+        frame.style.borderRadius = (40 - (p * 40)) + 'px';
+        cap.style.opacity = p > 0.8 ? 1 : 0;
+    });
+
+    window.addEventListener('resize', resize);
+    resize(); animate();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AI.EX | Neural Calibration & Infinite AI Archive 2026</title>
+    <meta name="description" content="Access the AI.EX Titan Archive. An interactive 2026 encyclopedia featuring 180+ data points, neural star-mapping, and deep-dive AI ethics. Calibrate your interface here.">
+    <meta name="keywords" content="Artificial Intelligence, AGI Archive, 2026 AI News, Neural Network Sandbox, Machine Learning Encyclopedia, AI Ethics, Future Tech, Gemini 3, GPT-5, Robotics">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="author" content="AI.EX Neural Systems">
+    <link rel="canonical" href="https://your-titan-archive-url.com/">
+
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="AI.EX | The Infinite Neural Archive">
+    <meta property="og:description" content="Calibrate your neural manifold and explore the deepest archive of machine intelligence ever assembled.">
+    <meta property="og:url" content="https://your-titan-archive-url.com/">
+    <meta property="og:site_name" content="AI.EX Archive">
+    <meta property="og:image" content="https://your-titan-archive-url.com/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@AI_EX_Archive">
+    <meta name="twitter:creator" content="@AI_EX_Archive">
+    <meta name="twitter:title" content="AI.EX | Neural Calibration Terminal">
+    <meta name="twitter:description" content="Experience the interactive neural star-map and enter the 2026 AI encyclopedia.">
+    <meta name="twitter:image" content="https://your-titan-archive-url.com/twitter-card.jpg">
+
+    <meta name="theme-color" content="#020408">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "AI.EX Archive",
+      "url": "https://your-titan-archive-url.com/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://your-titan-archive-url.com/main.html?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "description": "The definitive 2026 Artificial Intelligence encyclopedia and interactive star-map."
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root { --cyan: #00eaff; --purple: #8b5cf6; --bg: #020408; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: #fff; font-family: 'Space Grotesk', sans-serif; overflow: hidden; height: 100vh; display: flex; align-items: center; justify-content: center; }
+        #interactive-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; cursor: crosshair; }
+        
+        .terminal-overlay { position: relative; z-index: 10; text-align: center; pointer-events: none; }
+        h1 { font-size: clamp(4rem, 15vw, 10rem); letter-spacing: -12px; background: linear-gradient(to bottom, #fff, var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 10px; opacity: 0; transform: scale(0.8); animation: bootUp 1.2s forwards 0.3s; }
+
+        /* HUD & INSTRUCTIONS */
+        .hud-ui { position: absolute; bottom: 50px; left: 50px; z-index: 20; font-family: 'JetBrains Mono'; font-size: 10px; color: var(--cyan); pointer-events: none; border-left: 1px solid var(--cyan); padding-left: 20px; text-transform: uppercase; letter-spacing: 3px; line-height: 2; opacity: 0; animation: fadeIn 2s forwards 1.5s; }
+        .hud-ui b { color: #fff; }
+
+        .enter-btn { pointer-events: auto; display: inline-block; margin-top: 30px; padding: 18px 50px; border: 1px solid var(--cyan); color: var(--cyan); text-decoration: none; font-family: 'JetBrains Mono'; letter-spacing: 6px; font-weight: bold; transition: 0.4s; background: rgba(0, 234, 255, 0.03); opacity: 0; animation: fadeIn 1s forwards 2s; }
+        .enter-btn:hover { background: var(--cyan); color: #000; box-shadow: 0 0 50px rgba(0, 234, 255, 0.5); transform: translateY(-3px); }
+
+        @keyframes bootUp { to { opacity: 1; transform: scale(1); } }
+        @keyframes fadeIn { to { opacity: 0.8; } }
+
+        /* VIGNETTE */
+        body::before { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, transparent 40%, rgba(0,0,0,0.8) 100%); z-index: 5; pointer-events: none; }
+    </style>
+</head>
+<body>
+
+<canvas id="interactive-canvas"></canvas>
+
+<div class="hud-ui">
+    <div><b>[SYS]</b> NEURAL MANIFOLD: <span id="node-count">100</span> NODES</div>
+    <div><b>[CMD]</b> MOVE MOUSE TO WARP REALITY</div>
+    <div><b>[CMD]</b> CLICK TO INJECT NEW DATA</div>
+    <div><b>[CMD]</b> DRAG TO SYNC CONSTELLATIONS</div>
+    <div style="margin-top: 10px; color: var(--purple);"><b>[STATUS]</b> READY FOR UPLOAD</div>
+</div>
+
+<div class="terminal-overlay">
+    <h1>AI.EX</h1>
+    <p style="font-family: 'JetBrains Mono'; color: #444; letter-spacing: 12px; margin-bottom: 30px;">CALIBRATION TERMINAL</p>
+    <a href="./ai.html" class="enter-btn">ENTER VAULT</a>
+</div>
+
+<script>
+    const canvas = document.getElementById('interactive-canvas');
+    const ctx = canvas.getContext('2d');
+    const nodeDisplay = document.getElementById('node-count');
+    let width, height, particles = [];
+    let mouse = { x: -1000, y: -1000 };
+
+    function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+    }
+
+    class Particle {
+        constructor(x, y) {
+            this.x = x || Math.random() * width;
+            this.y = y || Math.random() * height;
+            this.vx = (Math.random() - 0.5) * 0.4;
+            this.vy = (Math.random() - 0.5) * 0.4;
+            this.size = Math.random() * 2 + 0.5;
+        }
+        update() {
+            let dx = mouse.x - this.x;
+            let dy = mouse.y - this.y;
+            let dist = Math.sqrt(dx*dx + dy*dy);
+            if (dist < 180) {
+                this.x -= dx * 0.02;
+                this.y -= dy * 0.02;
+            }
+            this.x += this.vx;
+            this.y += this.vy;
+            if (this.x < 0 || this.x > width) this.vx *= -1;
+            if (this.y < 0 || this.y > height) this.vy *= -1;
+        }
+        draw() {
+            ctx.fillStyle = "rgba(0, 234, 255, 0.7)";
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+        }
+    }
+
+    function init() {
+        resize();
+        particles = Array.from({ length: 120 }, () => new Particle());
+        animate();
+    }
+
+    function animate() {
+        ctx.fillStyle = 'rgba(2, 4, 8, 0.15)';
+        ctx.fillRect(0, 0, width, height);
+        nodeDisplay.innerText = particles.length;
+
+        particles.forEach((p, i) => {
+            p.update();
+            p.draw();
+            for (let j = i + 1; j < particles.length; j++) {
+                let p2 = particles[j];
+                let dx = p.x - p2.x;
+                let dy = p.y - p2.y;
+                let dist = Math.sqrt(dx*dx + dy*dy);
+                if (dist < 130) {
+                    ctx.strokeStyle = `rgba(0, 234, 255, ${1 - dist/130})`;
+                    ctx.lineWidth = 0.6;
+                    ctx.beginPath();
+                    ctx.moveTo(p.x, p.y);
+                    ctx.lineTo(p2.x, p2.y);
+                    ctx.stroke();
+                }
+            }
+        });
+        requestAnimationFrame(animate);
+    }
+
+    window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+    window.addEventListener('mousedown', e => {
+        for(let i=0; i<8; i++) particles.push(new Particle(e.clientX, e.clientY));
+        if(particles.length > 250) particles.splice(0, 8);
+    });
+    window.addEventListener('resize', resize);
+    init();
+</script>
+
+</body>
+</html>
