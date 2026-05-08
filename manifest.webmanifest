@@ -1,0 +1,12 @@
+{
+  "name": "AI.EX Artificial Intelligence Archive",
+  "short_name": "AI.EX",
+  "description": "A visual artificial intelligence archive covering machine learning, deep learning, generative AI, AGI, AI ethics, AI safety, robotics, governance, glossary, timeline, and FAQs.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#03040a",
+  "theme_color": "#00eaff",
+  "categories": ["education", "technology", "productivity"],
+  "lang": "en"
+}
